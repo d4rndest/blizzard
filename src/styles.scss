@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  font-family: Poppins;
+  --primary-color: #FFFFFF;
+  --secondary-color: #00AEFF;
+  color: var(--primary-color);
+  background: #020203;
+  overflow-x: hidden;
+}
+
+@media (max-width: 375px) {
+  html, body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

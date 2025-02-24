@@ -1,0 +1,8 @@
+<button
+  *ngFor="let game of games"
+  [class.active]="game.id === gameId"
+  (click)="selectGame(game.id)"
+>
+  <img [src]="game.image" alt="{{ game.id }}" data-aos="fade-right"/>
+</button>
+  

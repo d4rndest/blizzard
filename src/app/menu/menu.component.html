@@ -1,0 +1,19 @@
+<div *ngIf="show" [ngClass]="selectedMenu" @menuAnimation class="container">
+  <div class="items-container">
+    <div *ngFor="let item of items" 
+      [ngClass]="{'game': selectedMenu === 'games', 
+                  'sport': selectedMenu === 'sports'}">
+      <img [src]="item.image" alt="{{ item.image }}" />
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+    
+  <footer>
+    <div class="footer-links">
+      <a *ngFor="let link of footerLink" href="#">
+        <img [src]="link.image" alt="{{ link.image }}" />
+        {{ link.text }}
+      </a>
+    </div>
+  </footer>
+</div>

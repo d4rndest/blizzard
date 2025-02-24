@@ -1,0 +1,6 @@
+<button [ngClass]="classes" [ngStyle]="styles">
+    <ng-container *ngIf="icon && iconTemplate">
+        <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+    </ng-container>
+    <ng-content></ng-content>
+</button>

@@ -1,0 +1,52 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 26.8125rem;
+  top: 37px;
+  gap: 34px;
+
+  @media (max-width: 1440px) {
+    display: none;
+  }
+  
+  a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  svg {
+    transition: transform .3s ease;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 14px;
+    background: none;
+    border: none;
+    color: inherit;
+  
+    &.active {
+      svg {
+        color: var(--secondary-color);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  button, a {
+    transition: all .3s ease;
+  }
+
+  button:hover, a:hover {
+    filter:brightness(0.8);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+<nav data-aos="fade-right" data-aos-delay="100">
+    <ng-container *ngFor="let link of links">
+        <ng-container *ngIf="link.isDropdown; else isLink">
+          <button
+            [ngClass]="{ 'active': selectedMenu === link.id }"
+            (click)="toggleMenu(link)">
+            {{ link.label }}
+            <svg width="10" height="5" viewBox="0 0 10 5" fill="none">
+              <path opacity="0.6" d="M1 0.5L5 4.5L9 0.5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+        </ng-container>
+        <ng-template #isLink>
+          <a routerLink="{{ link.href }}">{{ link.label }}</a>
+        </ng-template>
+    </ng-container>
+</nav>
+  

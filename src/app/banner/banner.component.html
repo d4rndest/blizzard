@@ -1,0 +1,51 @@
+<section>
+  <div *ngFor="let game of games; let i = index" 
+    [ngClass]="{'active': i === index}"
+    class="container"
+  >
+    <div *ngIf="i === index" class="progress-bar"></div>
+    <div class="bg"
+      [ngStyle]="{
+        'background': 'radial-gradient(73.1% 73.1% at 52.6% 25.14%, rgba(2, 2, 3, 0) 0%, #020203 71.1%), url(' + game.background + ')',
+        'background-position': (50 + parallaxX) + '% ' + (50 + parallaxY) + '%',
+        'background-size': 'cover',
+        'background-repeat': 'no-repeat'
+      }"
+    ></div>
+
+    <div class="games-content">
+      <div class="games-container">
+        <div class="game-info">
+          <div class="game-text">
+            <h1 data-aos="fade-right" data-aos-delay="100">{{ game.heading }}</h1>
+            <p data-aos="fade-right" data-aos-delay="200">{{ game.text }}</p>
+          </div>
+          <app-button class="btn" [icon]="true" data-aos="fade-right" data-aos-delay="300">
+            <img src="/assets/icons/user.svg" alt="User Icon" />
+            {{ game.buttonText }}
+          </app-button>
+        </div>
+        <div class="game-media">
+          <img [src]="game.logo" class="logo" alt="Game logo" data-aos="fade-right" data-aos-delay="200">
+          <div class="trailer-container" data-aos="fade-right" data-aos-delay="300">
+            <p>Assista o trailer</p>
+            <div class="trailer-wrapper">
+              <img [src]="game.trailer.thumbnail" class="thumbnail" alt="Thumbnail">
+              <img [src]="game.trailer.gif" class="gif" alt="Gif">
+              <button aria-label="Assistir trailer">
+                <svg width="17.51" height="13.7" viewBox="0 0 17.51 13.7" xmlns="http://www.w3.org/2000/svg" fill="#00AEFF">
+                  <path d="M 0 0 L 17.51 6.85 L 0 13.7 Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-slider
+[gameId]="gameId"
+(gameSelected)="onGameSelect($event)">
+</app-slider>

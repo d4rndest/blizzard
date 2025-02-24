@@ -1,0 +1,50 @@
+<header>
+    <div class="header-container">
+        <div class="header-left">
+            <a data-aos="fade-right">
+                <img src="assets/images/logo-blizzard.png" alt="Blizzard"/> 
+            </a>
+            
+            <app-nav 
+                [selectedMenu]="selectedMenu" 
+                [show]="show" 
+                (menuToggled)="toggleMenu($event)">
+            </app-nav>
+        </div>
+        <div class="header-right" data-aos="fade-right" data-aos-delay="200">
+            <div class="btn-wrapper">
+                <app-button [style]="'outline'"> 
+                    Criar conta
+                </app-button>
+                <app-button [icon]="true"             
+                    [css]="{ width: '7.243125rem',
+                            height: '2.5625rem',
+                            padding: '10px 25.23px',
+                            borderRadius: '3.15px',
+                            fontWeight: '500',
+                            fontSize: '14px',
+                            lineHeight: '21px',
+                            gap: '6.31px' }"
+                    (click)="toggleLoginModal()"
+                >
+                    <img src="/assets/icons/user.svg" alt="User Icon" />
+                        Logar
+                </app-button>
+            </div>
+            <button class="menu-hamburguer-btn">
+                <div class="menu-hamburguer"></div>
+            </button>
+        </div>
+    </div>
+</header>
+
+<app-menu 
+[selectedMenu]="selectedMenu" 
+[show]="show">
+</app-menu>
+
+<app-login-modal 
+    [isOpen]="isLoginModalOpen" 
+    (closeModal)="toggleLoginModal()">
+</app-login-modal>
+

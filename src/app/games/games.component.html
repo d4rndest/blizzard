@@ -1,0 +1,46 @@
+<header>
+    <div class="header-left">
+      <p class="games-label" data-aos="fade-right">GAMES</p>
+      <h1 data-aos="fade-right" data-aos-delay="100">Jogos Exclusivos</h1>
+    </div>
+    <div class="platform" data-aos="fade-right" data-aos-delay="200">
+        <button
+          *ngFor="let platform of platforms"
+          (click)="setFilter(platform)"
+          [ngClass]="{'active': currentFilter === platform}"
+          [attr.aria-label]="'Filtrar jogos ' + platform"
+        >
+          <img [src]="'assets/icons/' + platform.toLowerCase() + '.svg'" [alt]="platform" />
+        </button>
+    </div>
+    <div class="header-right" data-aos="fade-right" data-aos-delay="300">
+        <img src="assets/icons/cubes-blue.svg" alt="Cubes" />
+        <a href="#">
+            Ver todos jogos
+        </a>
+    </div>
+</header>
+  
+<div class="games-list">
+    <ng-container *ngFor="let game of games">
+        <div class="game-card" data-aos="fade-right">
+            <div class="game-image-wrapper">
+                <img class="game-image" [src]="game.image" alt="{{ game.name }}" />
+                <div class="overlay"></div>
+                <img class="game-logo" [src]="game.logo" alt="{{ game.logo }}" />
+            </div>
+            <div class="game-text-wrapper">
+                <p class="game-name">{{ game.name }}</p>
+                <p class="game-category">{{ game.category }}</p>
+            </div>
+        </div> 
+    </ng-container>
+    <div class="card-see-more" data-aos="fade-right">
+        <img src="assets/images/logo-blizzard.png" alt="Blizzard" />
+        <a href="#">
+            <img src="assets/icons/cubes.svg" alt="Cubes" />
+            Ver todos jogos
+        </a>
+    </div>     
+</div>
+  

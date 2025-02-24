@@ -1,0 +1,45 @@
+<section>
+    <div class="background-mask"></div>
+    <div class="left-container">
+        <div class="left-wrapper">
+            <img src="assets/icons/battlenet.svg" alt="Battlenet" data-aos="fade-right" data-aos-delay="100"/>
+            <h1 data-aos="fade-right" data-aos-delay="100">Baixe agora o battle.net</h1>
+    
+            <div class="infos" data-aos="fade-right" data-aos-delay="200">
+                <div class="info">
+                    <img src="assets/icons/cards_group.svg" alt="Cards group" />
+                    <p>Seus jogos em um só lugar</p>
+                </div>
+                <div class="info">
+                    <img src="assets/icons/dots_group.svg" alt="Dots group" />
+                    <p>Conecte-se aos seus amigos</p>
+                </div>
+                <div class="info">
+                    <img src="assets/icons/buy.svg" alt="Buy" />
+                    <p>Compre jogos e itens digitais</p>
+                </div>
+            </div>
+    
+            <app-button class="download-btn" data-aos="fade-right" data-aos-delay="300"
+                [icon]="true"
+                [css]="{ width: '16.625rem' }">
+                <img [src]="osIcon()" alt="OS Icon" />
+                Baixar para {{ detectedOS() }}
+            </app-button>
+    
+            <p class="mobile" data-aos="fade-right" data-aos-delay="400">
+                <img src="assets/icons/mobile.svg" alt="Mobile" />
+                <span>
+                    Também disponível como <a href="#">aplicativo móvel</a>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div class="right-wrapper" data-aos="fade-up" data-aos-delay="400">
+            <img class="img-1" src="assets/images/download-1.png" alt="" />
+            <img class="img-2" src="assets/images/download-2.png" alt="" />
+        </div>
+    </div>
+</section>
