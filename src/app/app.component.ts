@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadGames();
-    AOS.init({ duration: 1000, easing: 'ease-in-out' });
+    AOS.init({ duration: 500, easing: 'ease-in-out' });
   }
 
   loadGames(): void {
